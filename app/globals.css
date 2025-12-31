@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* 기본 색상 (라이트 모드 고정) */
+:root {
+  --background: #ffffff;   /* 흰색 배경 */
+  --foreground: #000000;   /* 검정 글자 */
+}
+
+/* Tailwind 커스텀 테마 */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* 전체 페이지 기본 스타일 */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
