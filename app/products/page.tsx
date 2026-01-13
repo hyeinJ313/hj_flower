@@ -1,8 +1,11 @@
+import Link from "next/link";
+
 export default function ProductsPage() {
   const products = [
-    { id: 1, name: "동양난 1호", price: 55000, image: "/sample1.jpg" },
-    { id: 2, name: "꽃바구니 A", price: 45000, image: "/sample2.jpg" },
-    { id: 3, name: "축하화환 기본형", price: 70000, image: "/sample3.jpg" },
+    { id: 1, name: "황룡금", price: 55000, image: "/east_hwang_1.jpg" },
+    { id: 2, name: "서양난 100cm 샘플1", price: 45000, image: "/west10_1.jpg" },
+    { id: 3, name: "서양난 100cm 샘플2", price: 70000, image: "/west10_2.jpg" },
+    { id: 3, name: "서양난 100cm 샘플3", price: 70000, image: "/west10_3.jpg" }
   ];
 
   return (
@@ -14,23 +17,29 @@ export default function ProductsPage() {
       }}
     >
       {products.map((p) => (
-        <div
+        <Link
           key={p.id}
-          style={{
-            border: "1px solid #ddd",
-            borderRadius: "8px",
-            padding: "10px",
-            textAlign: "center",
-          }}
+          href={`/products/${p.id}`}
+          style={{ textDecoration: "none", color: "inherit" }}
         >
-          <img
-            src={p.image}
-            alt={p.name}
-            style={{ width: "100%", borderRadius: "6px" }}
-          />
-          <h3 style={{ marginTop: "10px" }}>{p.name}</h3>
-          <p style={{ color: "#444" }}>{p.price.toLocaleString()}원</p>
-        </div>
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "8px",
+              padding: "10px",
+              textAlign: "center",
+              cursor: "pointer",
+            }}
+          >
+            <img
+              src={p.image}
+              alt={p.name}
+              style={{ width: "100%", borderRadius: "6px" }}
+            />
+            <h3 style={{ marginTop: "10px" }}>{p.name}</h3>
+            <p style={{ color: "#444" }}>{p.price.toLocaleString()}원</p>
+          </div>
+        </Link>
       ))}
     </div>
   );
