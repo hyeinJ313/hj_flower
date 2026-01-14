@@ -5,6 +5,8 @@ export default function OrchidEastPage() {
     { id: 1, name: "철골 소심", price: 50000, image: "/east_5.jpg" },
     { id: 2, name: "채홍", price: 80000, image: "/east_8.jpg" },
     { id: 3, name: "황룡금", price: 100000, image: "/east_10.jpg" },
+    { id: 4, name: "일향금 A", price: 150000, image: "/east_15.jpg" },
+    { id: 5, name: "일향금 B", price: 200000, image: "/east_20.jpg" },
   ];
 
   return (

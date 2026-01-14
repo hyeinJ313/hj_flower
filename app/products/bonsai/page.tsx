@@ -2,8 +2,7 @@ import Link from "next/link";
 
 export default function BonsaiPage() {
   const products = [
-    { id: 4, name: "서양난 A", price: 60000, image: "/seoyangnan.jpg" },
-    { id: 5, name: "서양난 B", price: 70000, image: "/sample2.jpg" },
+    { id: 14, name: "분재", price: 150000, image: "/bonsai_15.jpg" },
   ];
 
   return (

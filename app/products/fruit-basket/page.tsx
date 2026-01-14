@@ -2,8 +2,9 @@ import Link from "next/link";
 
 export default function FruitBasketPage() {
   const products = [
-    { id: 4, name: "서양난 A", price: 60000, image: "/seoyangnan.jpg" },
-    { id: 5, name: "서양난 B", price: 70000, image: "/sample2.jpg" },
+    { id: 26, name: "과일바구니 A", price: 100000, image: "/fruit10_1.jpg" },
+    { id: 29, name: "과일바구니 C", price: 150000, image: "/fruit15.jpg" },
+    { id: 30, name: "과일바구니 D", price: 200000, image: "/fruit20.jpg" },
   ];
 
   return (

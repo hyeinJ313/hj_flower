@@ -2,9 +2,13 @@ import Link from "next/link";
 
 export default function OrchidWestPage() {
   const products = [
-    { id: 4, name: "큰호접 다섯 대 A", price: 100000, image: "/west10_1.jpg" },
-    { id: 5, name: "큰호접 다섯 대 B", price: 100000, image: "/west10_2.jpg" },
-    { id: 6, name: "큰호접 다섯 대 C", price:100000, image: "/west10_3.jpg"},
+    { id: 7, name: "서양난 A", price: 100000, image: "/west10_1.jpg" },
+    { id: 8, name: "서양난 B", price: 100000, image: "/west10_2.jpg" },
+    { id: 9, name: "서양난 C", price: 100000, image: "/west10_3.jpg" },
+    { id: 10, name: "서양난 D", price: 150000, image: "/west15_1.jpg" },
+    { id: 11, name: "서양난 E", price: 150000, image: "/west15_2.jpg" },
+    { id: 12, name: "서양난 F", price: 150000, image: "/west20_1.jpg" },
+    { id: 13, name: "서양난 G", price: 150000, image: "/west20_2.jpg" },
   ];
 
   return (

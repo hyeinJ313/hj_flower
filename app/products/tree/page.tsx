@@ -2,8 +2,18 @@ import Link from "next/link";
 
 export default function TreePage() {
   const products = [
-    { id: 4, name: "서양난 A", price: 60000, image: "/seoyangnan.jpg" },
-    { id: 5, name: "서양난 B", price: 70000, image: "/sample2.jpg" },
+    { id: 15, name: "금전수", price: 100000, image: "/tree_gum110.jpg" },
+    { id: 16, name: "고무나무", price: 100000, image: "/tree_gomu160.jpg" },
+    { id: 17, name: "녹보수(신종 해피트리)", price: 100000, image: "/tree_nok160.jpg" },
+    { id: 18, name: "황금죽", price: 100000, image: "/tree_hwang160.jpg" },
+    { id: 19, name: "스투키", price: 100000, image: "/tree_stu110.jpg" },
+    { id: 20, name: "아레카야자", price: 100000, image: "/tree_areka150.jpg" },
+    { id: 20, name: "안시리움", price: 70000, image: "/tree_anshi_7.jpg" },
+    { id: 20, name: "미니 스투키", price: 70000, image: "/tree_ministu_7.jpg" },
+    { id: 20, name: "보석금전수", price: 70000, image: "/tree_bogum_7.jpg" },
+    { id: 20, name: "미니 녹보수", price: 70000, image: "/tree_mininok_7.jpg" },
+
+    
   ];
 
   return (

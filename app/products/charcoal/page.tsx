@@ -2,8 +2,7 @@ import Link from "next/link";
 
 export default function CharcoalPage() {
   const products = [
-    { id: 4, name: "서양난 A", price: 60000, image: "/seoyangnan.jpg" },
-    { id: 5, name: "서양난 B", price: 70000, image: "/sample2.jpg" },
+  { id: 15, name: "숯부작", price: 100000, image: "/char_10.jpg" },  
   ];
 
   return (
