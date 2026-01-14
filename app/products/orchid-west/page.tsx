@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function OrchidWestPage() {
   const products = [
-    { id: 4, name: "서양난 A", price: 100000, image: "/west10_1.jpg" },
-    { id: 5, name: "서양난 B", price: 100000, image: "/west10_2.jpg" },
-    { id: 6, name: "서양난 C", price:100000, image: "/west10_3.jpg"},
+    { id: 4, name: "큰호접 다섯 대 A", price: 100000, image: "/west10_1.jpg" },
+    { id: 5, name: "큰호접 다섯 대 B", price: 100000, image: "/west10_2.jpg" },
+    { id: 6, name: "큰호접 다섯 대 C", price:100000, image: "/west10_3.jpg"},
   ];
 
   return (

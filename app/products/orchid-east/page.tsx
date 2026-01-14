@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function OrchidEastPage() {
   const products = [
-    { id: 1, name: "황룡금", price: 50000, image: "/east_5.jpg" },
-    { id: 2, name: "동양난 2호", price: 80000, image: "/east_8.jpg" },
-    { id: 3, name: "동양난 3호", price: 100000, image: "/east_10.jpg" },
+    { id: 1, name: "철골 소심", price: 50000, image: "/east_5.jpg" },
+    { id: 2, name: "채홍", price: 80000, image: "/east_8.jpg" },
+    { id: 3, name: "황룡금", price: 100000, image: "/east_10.jpg" },
   ];
 
   return (
@@ -12,8 +12,8 @@ export default function OrchidEastPage() {
       style={{
         padding: "20px",
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-        gap: "20px",
+        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+        gap: "30px",
       }}
     >
       {products.map((p) => (
@@ -37,7 +37,7 @@ export default function OrchidEastPage() {
               alt={p.name}
               style={{
                 width: "100%",
-                height: "180px",
+                height: "260px",
                 objectFit: "cover",
                 borderRadius: "6px",
               }}
