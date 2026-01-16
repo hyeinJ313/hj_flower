@@ -1,14 +1,36 @@
+"use client";
+
 import Link from "next/link";
+import { products } from "../../data/products";
+import { useFilter } from "../FilterContext";
 
 export default function OrchidEastPage() {
-  const products = [
-    { id: 1, name: "철골 소심", price: 50000, image: "/east_5.jpg" },
-    { id: 2, name: "채홍", price: 80000, image: "/east_8.jpg" },
-    { id: 3, name: "황룡금", price: 100000, image: "/east_10.jpg" },
-    { id: 4, name: "일향금 A", price: 150000, image: "/east_15.jpg" },
-    { id: 5, name: "일향금 B", price: 200000, image: "/east_20.jpg" },
-  ];
+  const { priceFilter, sortType } = useFilter();
 
+  // 1) 카테고리 필터
+  const categoryProducts = products.filter(
+    (p) => p.category === "orchid-east"
+  );
+
+  // 2) 가격 필터
+  const filteredProducts = categoryProducts.filter((p) => {
+    if (priceFilter === "all") return true;
+    if (priceFilter === "under100") return p.price < 100000;
+    if (priceFilter === "100to150") return p.price >= 100000 && p.price < 150000;
+    if (priceFilter === "150to200") return p.price >= 150000 && p.price < 200000;
+    if (priceFilter === "over200") return p.price >= 200000;
+    return true;
+  });
+
+  // 3) 정렬
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sortType === "name") return a.name.localeCompare(b.name);
+    if (sortType === "high") return b.price - a.price;
+    if (sortType === "low") return a.price - b.price;
+    return 0;
+  });
+
+  // 4) 카드 UI 렌더링
   return (
     <div
       style={{
@@ -18,7 +40,7 @@ export default function OrchidEastPage() {
         gap: "30px",
       }}
     >
-      {products.map((p) => (
+      {sortedProducts.map((p) => (
         <Link
           key={p.id}
           href={`/products/${p.id}`}
@@ -54,3 +76,4 @@ export default function OrchidEastPage() {
     </div>
   );
 }
+

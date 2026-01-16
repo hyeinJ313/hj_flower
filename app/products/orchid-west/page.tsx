@@ -1,26 +1,46 @@
+"use client";
+
 import Link from "next/link";
+import { products } from "../../data/products";
+import { useFilter } from "../FilterContext";
 
 export default function OrchidWestPage() {
-  const products = [
-    { id: 7, name: "서양난 A", price: 100000, image: "/west10_1.jpg" },
-    { id: 8, name: "서양난 B", price: 100000, image: "/west10_2.jpg" },
-    { id: 9, name: "서양난 C", price: 100000, image: "/west10_3.jpg" },
-    { id: 10, name: "서양난 D", price: 150000, image: "/west15_1.jpg" },
-    { id: 11, name: "서양난 E", price: 150000, image: "/west15_2.jpg" },
-    { id: 12, name: "서양난 F", price: 150000, image: "/west20_1.jpg" },
-    { id: 13, name: "서양난 G", price: 150000, image: "/west20_2.jpg" },
-  ];
+  const { priceFilter, sortType } = useFilter();
 
+  // 1) 카테고리 필터
+  const categoryProducts = products.filter(
+    (p) => p.category === "orchid-west"
+  );
+
+  // 2) 가격 필터
+  const filteredProducts = categoryProducts.filter((p) => {
+    if (priceFilter === "all") return true;
+    if (priceFilter === "under100") return p.price < 100000;
+    if (priceFilter === "100to150") return p.price >= 100000 && p.price < 150000;
+    if (priceFilter === "150to200") return p.price >= 150000 && p.price < 200000;
+    if (priceFilter === "over200") return p.price >= 200000;
+    return true;
+  });
+
+  // 3) 정렬
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sortType === "name") return a.name.localeCompare(b.name);
+    if (sortType === "high") return b.price - a.price;
+    if (sortType === "low") return a.price - b.price;
+    return 0;
+  });
+
+  // 4) 카드 UI 렌더링
   return (
     <div
       style={{
         padding: "20px",
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-        gap: "20px",
+        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+        gap: "30px",
       }}
     >
-      {products.map((p) => (
+      {sortedProducts.map((p) => (
         <Link
           key={p.id}
           href={`/products/${p.id}`}
@@ -41,7 +61,7 @@ export default function OrchidWestPage() {
               alt={p.name}
               style={{
                 width: "100%",
-                height: "180px",
+                height: "260px",
                 objectFit: "cover",
                 borderRadius: "6px",
               }}
@@ -56,3 +76,5 @@ export default function OrchidWestPage() {
     </div>
   );
 }
+
+

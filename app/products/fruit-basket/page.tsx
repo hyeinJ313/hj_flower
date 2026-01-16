@@ -2,10 +2,14 @@ import Link from "next/link";
 
 export default function FruitBasketPage() {
   const products = [
-    { id: 26, name: "과일바구니 A", price: 100000, image: "/fruit10_1.jpg" },
-    { id: 29, name: "과일바구니 C", price: 150000, image: "/fruit15.jpg" },
-    { id: 30, name: "과일바구니 D", price: 200000, image: "/fruit20.jpg" },
-  ];
+    { id: 431, name: "과일바구니 A", price: 100000, image: "/fruit10_1.jpg",
+      desc: ""
+     },
+    { id: 432, name: "과일바구니 B", price: 100000, image: "/fruit10_2.jpg" },
+    { id: 433, name: "과일바구니 C", price: 100000, image: "/fruit10_3.jpg" },
+    { id: 434, name: "과일바구니 D", price: 150000, image: "/fruit15.jpg" },
+    { id: 435, name: "과일바구니 E", price: 200000, image: "/fruit20.jpg" },
+];
 
   return (
     <div

@@ -23,7 +23,7 @@ export default function OrderButtons() {
       </button>
 
       <a
-        href="tel:01012345678"
+        href="tel:029433877"
         style={{
           display: "block",
           padding: "12px 20px",
