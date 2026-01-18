@@ -55,8 +55,8 @@ export default function Home() {
           {[
             { name: "동양난", link: "/products/orchid-east", img: "/east_10.jpg" },
             { name: "서양난", link: "/products/orchid-west", img: "/west10_1.jpg" },
-            { name: "꽃다발", link: "/products/bouquet", img: "/bouquet1.jpg" },
-            { name: "꽃바구니", link: "/products/flower-basket", img: "/flower1.jpg" },
+            { name: "꽃다발", link: "/products/bouquet", img: "/bou_10_1.jpg" },
+            { name: "꽃바구니", link: "/products/flower-basket", img: "/flowerb_10_2.jpg" },
             { name: "과일바구니", link: "/products/fruit-basket", img: "/fruit10_1.jpg" },
             { name: "근조화환", link: "/products/wreath-funeral", img: "/funeral_10_2.jpg" },
           ].map((item) => (

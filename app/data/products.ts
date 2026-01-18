@@ -133,4 +133,12 @@
     { id: 522, name: "뱅갈 고무나무 B", price: 150000, image:"/tree_bengal180_15.jpg",category:"tree", height: "약 160cm", },
 
     { id: 61, name: "숯부작", price: 100000, image: "/char_10.jpg", category:"charcoal"},
+
+    { id: 711, name: "꽃바구니 A", price: 100000, image: "/flowerb_10_1.jpg", category:"flower-basket"},
+    { id: 712, name: "꽃바구니 B", price: 100000, image: "/flowerb_10_2.jpg", category:"flower-basket"},
+    { id: 713, name: "꽃바구니 C", price: 100000, image: "/flowerb_10_3.jpg", category:"flower-basket"},
+    { id: 714, name: "꽃바구니 D", price: 100000, image: "/flowerb_10_4.jpg", category:"flower-basket"},
+
+    { id: 721, name: "꽃다발 A", price: 100000, image: "/bou_10_1.jpg", category:"bouquet"},
+    { id: 722, name: "꽃다발 B", price: 100000, image: "/bou_10_2.jpg", category:"bouquet"},
   ];
