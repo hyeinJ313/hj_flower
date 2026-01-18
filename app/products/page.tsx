@@ -2,6 +2,7 @@
 
 import { products } from "../data/products";
 import { useFilter } from "./FilterContext";
+import Link from "next/link";
 
 export default function ProductListPage() {
   const { priceFilter, sortType } = useFilter();
@@ -25,11 +26,19 @@ export default function ProductListPage() {
   });
 
   return (
-    <div>
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {sortedProducts.map((p) => (
-        <div key={p.id} style={{ marginBottom: "10px" }}>
-          {p.name} - {p.price.toLocaleString()}원
-        </div>
+        <Link href={`/products/${p.id}`} key={p.id}>
+          <div className="p-4 border rounded bg-white shadow-sm text-center hover:shadow-md transition cursor-pointer">
+            <img
+              src={p.image}
+              alt={p.name}
+              className="w-full h-40 object-cover mb-2 rounded"
+            />
+            <div className="font-semibold">{p.name}</div>
+            <div className="text-gray-600">{p.price.toLocaleString()}원</div>
+          </div>
+        </Link>
       ))}
     </div>
   );

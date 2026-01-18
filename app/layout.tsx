@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body style={{ paddingTop: "120px" }}>
+      <body className="body-padding">
         <NavBar />
         {children}
         <Footer />

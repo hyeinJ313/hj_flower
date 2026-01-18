@@ -32,14 +32,7 @@ export default function WreathFuneralPage() {
 
   // 4) 카드 UI 렌더링
   return (
-    <div
-      style={{
-        padding: "20px",
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-        gap: "30px",
-      }}
-    >
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {sortedProducts.map((p) => (
         <Link
           key={p.id}

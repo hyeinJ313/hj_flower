@@ -10,9 +10,7 @@ function FilterBars() {
       {/* 가격 필터 바 */}
       <div
         style={{
-          position: "sticky",
-          top: "80px",
-          zIndex: 30,
+          width: "100%",
           background: "white",
           padding: "12px 0",
           borderBottom: "1px solid #eee",
@@ -41,6 +39,7 @@ function FilterBars() {
               background: priceFilter === item.key ? "#E8F5E9" : "white",
               cursor: "pointer",
               fontSize: "14px",
+              whiteSpace: "nowrap",
             }}
           >
             {item.label}
@@ -48,12 +47,10 @@ function FilterBars() {
         ))}
       </div>
 
-      {/* 이름/가격 정렬 바 */}
+      {/* 정렬 바 */}
       <div
         style={{
-          position: "sticky",
-          top: "130px",
-          zIndex: 29,
+          width: "100%",
           background: "white",
           padding: "12px 0",
           borderBottom: "1px solid #eee",
@@ -81,6 +78,7 @@ function FilterBars() {
               background: sortType === item.key ? "#E3F2FD" : "white",
               cursor: "pointer",
               fontSize: "14px",
+              whiteSpace: "nowrap",
             }}
           >
             {item.label}
@@ -94,9 +92,12 @@ function FilterBars() {
 export default function ProductsLayout({ children }: { children: React.ReactNode }) {
   return (
     <FilterProvider>
-      <div style={{ display: "flex", marginTop: "100px" }}>
-        {/* 왼쪽 카테고리 */}
+      {/* 핵심: 모바일은 column, PC는 row */}
+      <div className="flex flex-col md:flex-row mt-[100px]">
+
+        {/* 사이드바 */}
         <aside
+          className="sidebar"
           style={{
             width: "250px",
             padding: "20px",
@@ -121,8 +122,17 @@ export default function ProductsLayout({ children }: { children: React.ReactNode
           </ul>
         </aside>
 
+        {/* 모바일에서 사이드바 숨기기 */}
+        <style jsx>{`
+          @media (max-width: 768px) {
+            .sidebar {
+              display: none;
+            }
+          }
+        `}</style>
+
         {/* 오른쪽 콘텐츠 */}
-        <main style={{ flex: 1, padding: "20px", position: "relative" }}>
+        <main style={{ flex: 1, padding: "20px", width: "100%" }}>
           <FilterBars />
           {children}
         </main>

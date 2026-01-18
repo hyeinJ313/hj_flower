@@ -2,8 +2,8 @@
 
 /* 기본 색상 (라이트 모드 고정) */
 :root {
-  --background: #ffffff;   /* 흰색 배경 */
-  --foreground: #000000;   /* 검정 글자 */
+  --background: #ffffff;
+  --foreground: #000000;
 }
 
 /* Tailwind 커스텀 테마 */
@@ -15,10 +15,40 @@
 }
 
 /* 전체 페이지 기본 스타일 */
-body {
-  background-color: var(--background);
-  color: var(--foreground);
+html, body {
   margin: 0;
   padding: 0;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: sans-serif;
+
+  /* 좌우 스크롤 제거 */
+  overflow-x: hidden;
+
+  /* 모바일에서 가운데 정렬 */
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 전체 레이아웃을 가운데 정렬 */
+body {
+  display: block;
+}
+
+/* 내부 콘텐츠가 화면보다 넓어지지 않도록 */
+body > * {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* NavBar 때문에 생기는 여백 제거 */
+.body-padding {
+  padding-top: 0px;
+}
+
+@media (max-width: 768px) {
+  .body-padding {
+    padding-top: 0px;
+  }
 }

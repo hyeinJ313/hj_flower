@@ -12,14 +12,7 @@ export default function FruitBasketPage() {
 ];
 
   return (
-    <div
-      style={{
-        padding: "20px",
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-        gap: "20px",
-      }}
-    >
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {products.map((p) => (
         <Link
           key={p.id}
