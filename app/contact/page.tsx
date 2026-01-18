@@ -8,8 +8,6 @@ export default function ContactPage() {
         margin: "0 auto",
       }}
     >
-      <h1 style={{ fontSize: "28px", marginBottom: "20px" }}>문의</h1>
-
       <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "10px" }}>
         아래 연락처로 문의하시면 빠르게 답변드리겠습니다.
       </p>

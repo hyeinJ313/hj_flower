@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "HJ Flower",
+  title: "현주꽃방",
   description: "전국 꽃 서비스",
 };
 

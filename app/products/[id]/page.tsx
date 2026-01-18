@@ -1,12 +1,19 @@
+"use client";
+
+import { useParams } from "next/navigation";
 import { products } from "../../data/products";
 import OrderButtons from "./OrderButtons";
 
-type Props = {
-  params: { id: string };
-};
-
-export default function ProductDetailPage({ params }: Props) {
-  const product = products.find((p) => p.id === params.id);
+export default function ProductDetailPage() {
+  // Next.js App Router에서 params는 useParams()로 받아야 함
+  const params = useParams();
+  const productId = params?.id ? Number(params.id) : null;
+  
+  const product = products.find((p) => p.id === productId);
+  
+  if (!productId || !product) {
+   return <div style={{ padding: "20px" }}>상품을 찾을 수 없습니다.</div>;
+}
 
   if (!product) {
     return <div style={{ padding: "20px" }}>상품을 찾을 수 없습니다.</div>;

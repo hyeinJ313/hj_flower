@@ -1,6 +1,7 @@
 "use client";
 
 import { FilterProvider, useFilter } from "./FilterContext";
+import { usePathname } from "next/navigation";
 
 function FilterBars() {
   const { priceFilter, setPriceFilter, sortType, setSortType } = useFilter();
@@ -90,6 +91,11 @@ function FilterBars() {
 }
 
 export default function ProductsLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
+  // 상세페이지인지 확인: /products/숫자
+  const isDetailPage = /^\/products\/\d+$/.test(pathname);
+
   return (
     <FilterProvider>
       {/* 핵심: 모바일은 column, PC는 row */}
@@ -133,7 +139,8 @@ export default function ProductsLayout({ children }: { children: React.ReactNode
 
         {/* 오른쪽 콘텐츠 */}
         <main style={{ flex: 1, padding: "20px", width: "100%" }}>
-          <FilterBars />
+          {/* 상세페이지가 아닐 때만 FilterBars 보여주기 */}
+          {!isDetailPage && <FilterBars />}
           {children}
         </main>
       </div>
